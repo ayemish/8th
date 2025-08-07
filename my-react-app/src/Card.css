@@ -1,0 +1,311 @@
+/* Card Container */
+.card-container {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+/* Main Card */
+.card {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.7s ease-in-out;
+  background: linear-gradient(to bottom, #1e3a8a, #1d4ed8, #2563eb);
+  border: 2px solid #3b82f6;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.card.rolled {
+  height: 80px;
+  overflow: hidden;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6, #2563eb, #3b82f6, #1e3a8a);
+  background-size: 200% 100%;
+  animation: roll 3s ease-in-out infinite;
+}
+
+.card.rolled:hover {
+  transform: scale(1.05);
+}
+
+.card.unrolled {
+  height: auto;
+  min-height: 350px;
+  overflow: visible;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #1e3a8a, #1d4ed8, #2563eb);
+  background-size: 100% 100%;
+}
+
+/* Roll Animation */
+@keyframes roll {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+}
+
+/* Wooden Rods */
+.wooden-rod {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: linear-gradient(to right, #0f172a, #1e293b, #334155, #1e293b, #0f172a);
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.5);
+  transition: all 0.7s ease-in-out;
+}
+
+.wooden-rod.top {
+  top: 0;
+}
+
+.wooden-rod.bottom {
+  bottom: 0;
+}
+
+.wooden-rod.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wooden-rod.hidden {
+  opacity: 0;
+}
+
+.wooden-rod.top.hidden {
+  transform: translateY(-8px);
+}
+
+.wooden-rod.bottom.hidden {
+  transform: translateY(8px);
+}
+
+/* Rod Ends */
+.rod-end {
+  position: absolute;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: #0f172a;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.6);
+}
+
+.rod-end.left {
+  left: -8px;
+}
+
+.rod-end.right {
+  right: -8px;
+}
+
+/* Content */
+.card-content {
+  padding: 24px;
+  transition: all 0.7s ease-in-out;
+}
+
+.card-content.hidden-content {
+  opacity: 0;
+  transform: scaleY(0);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card-content.visible-content {
+  opacity: 1;
+  transform: scaleY(1);
+  margin-top: 16px;
+  margin-bottom: 16px;
+  transition-delay: 0.3s;
+}
+
+/* Content Border */
+.content-border {
+  border: 2px dashed #60a5fa;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, transparent, rgba(59, 130, 246, 0.1));
+}
+
+/* Title */
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #dbeafe;
+  margin-bottom: 16px;
+  text-align: center;
+  font-family: serif;
+}
+
+/* Decorative Line */
+.decorative-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.decorative-line .line {
+  width: 64px;
+  height: 2px;
+  background-color: #60a5fa;
+}
+
+.decorative-line .dot {
+  width: 8px;
+  height: 8px;
+  background-color: #60a5fa;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+/* Image Container */
+.image-container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #60a5fa;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Description */
+.card-description {
+  color: #dbeafe;
+  line-height: 1.6;
+  font-family: serif;
+  text-align: justify;
+  margin-bottom: 16px;
+}
+
+/* Price */
+.price-container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #059669;
+  background-color: #d1fae5;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px solid #10b981;
+}
+
+/* Click Hints */
+.click-hint {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.click-hint p {
+  font-size: 14px;
+  color: #93c5fd;
+  font-style: italic;
+  margin: 0;
+}
+
+.rolled-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rolled-hint p {
+  color: #dbeafe;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: rgba(30, 58, 138, 0.9);
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  margin: 0;
+}
+
+/* Paper Texture */
+.paper-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease-in-out;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(15, 23, 42, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(15, 23, 42, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(15, 23, 42, 0.2) 0%, transparent 50%);
+}
+
+.paper-texture.rolled-texture {
+  opacity: 0.3;
+}
+
+.paper-texture.unrolled-texture {
+  opacity: 0.1;
+}
+
+/* Shadow */
+.card-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  border-radius: 50%;
+  transition: all 0.7s ease-in-out;
+}
+
+.card-shadow.rolled-shadow {
+  width: 128px;
+  height: 16px;
+  opacity: 0.2;
+  filter: blur(4px);
+  transform: translateX(-50%) translateY(8px);
+}
+
+.card-shadow.unrolled-shadow {
+  width: 160px;
+  height: 24px;
+  opacity: 0.3;
+  filter: blur(8px);
+  transform: translateX(-50%) translateY(16px);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .card-container {
+    max-width: 350px;
+  }
+  
+  .card-content {
+    padding: 16px;
+  }
+  
+  .content-border {
+    padding: 16px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+  
+  .product-image {
+    height: 150px;
+  }
+  
+  .price {
+    font-size: 20px;
+  }
+}

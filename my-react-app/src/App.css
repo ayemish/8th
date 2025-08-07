@@ -1,0 +1,97 @@
+/* Reset and ensure black background */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #000000 !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* App Container */
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #000000 !important;
+  background: #000000 !important;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
+
+.app-title {
+  font-weight: bold;
+  text-align: center;
+  color: #dbeafe;
+  margin-bottom: 30px;
+  font-family: serif;
+}
+
+h2,h3{
+  color: #3b82f6;;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: serif;
+
+}
+
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  justify-items: stretch;
+  align-items: start;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+  
+  .app-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 10px;
+  }
+  
+  .app-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .cards-grid {
+    gap: 12px;
+  }
+}
